@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เว็บเช่ากล้อง</title>
+  <style>
+    /* Reset & Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      background: #f4f4f4;
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo img {
+      width: 150px;
+    }
+    nav ul {
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li a {
+      padding: 5px 10px;
+      transition: background 0.3s;
+    }
+    nav ul li a:hover {
+      background: #ddd;
+      border-radius: 4px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="Logo"></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cameras.html">Cameras</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="rental-process.html">Rental Process</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Rent the Perfect Camera for Your Adventure</h1>
+      <a href="cameras.html" class="btn">Rent Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <ul>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+      <p>© 2025 Camera Rental. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

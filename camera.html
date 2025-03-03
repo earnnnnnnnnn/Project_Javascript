@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        video {
+            width: 80%;
+            max-width: 600px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Camera Live View</h1>
+        <video id="camera" autoplay></video>
+        <br>
+        <button onclick="startCamera()">Start Camera</button>
+        <button onclick="stopCamera()">Stop Camera</button>
+    </div>
+
+    <script>
+        let stream;
+        
+        function startCamera() {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function(mediaStream) {
+                    stream = mediaStream;
+                    document.getElementById('camera').srcObject = stream;
+                })
+                .catch(function(error) {
+                    console.error('Error accessing camera: ', error);
+                });
+        }
+        
+        function stopCamera() {
+            if (stream) {
+                let tracks = stream.getTracks();
+                tracks.forEach(track => track.stop());
+                document.getElementById('camera').srcObject = null;
+            }
+        }
+    </script>
+</body>
+</html>

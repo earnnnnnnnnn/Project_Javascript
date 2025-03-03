@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เว็บเช่ากล้อง</title>
+  <style>
+    /* Reset & Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      background: #f4f4f4;
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo img {
+      width: 150px;
+    }
+    nav ul {
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li a {
+      padding: 5px 10px;
+      transition: background 0.3s;
+    }
+    nav ul li a:hover {
+      background: #ddd;
+      border-radius: 4px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('hero-bg.jpg') no-repeat center center/cover;
+      height: 400px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background: #ff6f61;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #ff3b2f;
+    }
+
+    /* Featured Cameras */
+    .featured-cameras {
+      padding: 40px 0;
+      background: #fafafa;
+    }
+    .featured-cameras h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    .cameras {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .camera {
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .camera h3 {
+      margin: 10px 0;
+    }
+    .camera p {
+      color: #ff6f61;
+      font-weight: bold;
+    }
+
+    /* Search & Filter Section */
+    .search-filter {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .search-filter h2 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    .search-filter form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .search-filter input[type="text"],
+    .search-filter select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-width: 200px;
+    }
+    .search-filter button {
+      padding: 10px 20px;
+      border: none;
+      background: #ff6f61;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .search-filter button:hover {
+      background: #ff3b2f;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 40px 20px;
+      background: #f4f4f4;
+      text-align: center;
+    }
+    .testimonials h2 {
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+    .testimonial {
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+    }
+    footer .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer ul {
+      display: flex;
+      gap: 15px;
+    }
+    footer ul li a {
+      color: #fff;
+      transition: color 0.3s;
+    }
+    footer ul li a:hover {
+      color: #ff6f61;
+    }
+    footer .social a {
+      margin-right: 10px;
+    }
+    footer p {
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+      }
+      footer .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Cameras</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Rental Process</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Rent the Perfect Camera for Your Adventure</h1>
+      <a href="#" class="btn">Rent Now</a>
+    </div>
+  </section>
+
+  <!-- Featured Cameras -->
+  <section class="featured-cameras">
+    <div class="container">
+      <h2>Featured Cameras</h2>
+      <div class="cameras">
+        <div class="camera">
+          <img src="camera1.jpg" alt="DSLR">
+          <h3>DSLR</h3>
+          <p>ราคา: ฿XXXX</p>
+        </div>
+        <div class="camera">
+          <img src="camera2.jpg" alt="Mirrorless">
+          <h3>Mirrorless</h3>
+          <p>ราคา: ฿XXXX</p>
+        </div>
+        <div class="camera">
+          <img src="camera3.jpg" alt="Action Camera">
+          <h3>Action Camera</h3>
+          <p>ราคา: ฿XXXX</p>
+        </div>
+        <div class="camera">
+          <img src="camera4.jpg" alt="360° Camera">
+          <h3>360° Camera</h3>
+          <p>ราคา: ฿XXXX</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search & Filter Section -->
+  <section class="search-filter">
+    <div class="container">
+      <h2>ค้นหากล้องที่ต้องการ</h2>
+      <form action="#" method="get">
+        <input type="text" placeholder="ค้นหากล้อง...">
+        <select name="type">
+          <option value="">ประเภท</option>
+          <option value="dslr">DSLR</option>
+          <option value="mirrorless">Mirrorless</option>
+          <option value="action">Action</option>
+          <option value="360">360° Camera</option>
+        </select>
+        <select name="price">
+          <option value="">ราคา</option>
+          <option value="low">ต่ำ</option>
+          <option value="medium">กลาง</option>
+          <option value="high">สูง</option>
+        </select>
+        <button type="submit">ค้นหา</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>ความคิดเห็นลูกค้า</h2>
+      <div class="testimonial">
+        <p>"บริการดีมากค่ะ" – ลูกค้าพึงพอใจ</p>
+      </div>
+      <div class="testimonial">
+        <p>"กล้องคุณภาพ ราคาสมเหตุสมผล" – ลูกค้าอีกคน</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+      </ul>
+      <div class="social">
+        <a href="#"><img src="facebook.png" alt="Facebook" width="24"></a>
+        <a href="#"><img src="twitter.png" alt="Twitter" width="24"></a>
+        <a href="#"><img src="instagram.png" alt="Instagram" width="24"></a>
+      </div>
+      <p>© 2025 Camera Rental. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
